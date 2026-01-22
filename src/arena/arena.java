@@ -53,7 +53,7 @@ public class Arena {
             } else {
                 alvo = defensores.escolherAlvoAleatorio();
             }
-            Batalha.atacar1v1(membro, alvo);
+            double dano = Batalha.atacar1v1(membro, alvo);
         }
     }
 }
