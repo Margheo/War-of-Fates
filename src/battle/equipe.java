@@ -1,9 +1,76 @@
 package battle;
 
+import characters.Personagem;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
+
 public class Equipe {
-    //TODO: metodos 
-    //adicionar() que adiciona personagens na equipe, 
-    //getVivos() que retorna a lista de personagens vivos na equipe,
-    //escolherAlvoJogador() que permite ao jogador escolher um alvo dentre os vivos,
-    //escolherAlvoAleatorio() que escolhe um alvo aleatoriamente dentre os vivos*/
+
+    private final List<Personagem> personagens;
+
+    public Equipe() {
+        this.personagens = new ArrayList<>();
+    }
+
+    public void adicionar(Personagem personagem) {
+        this.personagens.add(personagem);
+    }
+
+    public List<Personagem> getVivos() {
+        List<Personagem> vivos = new ArrayList<>();
+
+        for (Personagem p : this.personagens) {
+            if (p.personagemVivo()) {
+                vivos.add(p);
+            }
+        }
+        return vivos;
+    }
+
+    // EXPERIMENTAL -----------------------------------
+    public Personagem escolherAlvoJogador() {
+        List<Personagem> alvosDisponiveis = getVivos();
+
+        if (alvosDisponiveis.isEmpty()) {
+            return null;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Escolha um alvo:");
+
+        // Mostra a lista numerada para o jogador
+        for (int i = 0; i < alvosDisponiveis.size(); i++) {
+            Personagem alvo = alvosDisponiveis.get(i);
+            System.out.println((i + 1) + ". " + alvo.getNome());
+        }
+
+        int escolha = -1;
+        while (escolha < 1 || escolha > alvosDisponiveis.size()) {
+            System.out.print("Digite o número do alvo: ");
+            if (scanner.hasNextInt()) {
+                escolha = scanner.nextInt();
+            } else {
+                scanner.next();
+            }
+        }
+        scanner.close();
+
+        return alvosDisponiveis.get(escolha - 1);
+    }
+
+    //FUNCIONAL -----------------------------------------
+    public Personagem escolherAlvoAleatorio() {
+        List<Personagem> alvosDisponiveis = getVivos();
+
+        if (alvosDisponiveis.isEmpty()) {
+            return null;
+        }
+
+        Random random = new Random();
+        int indiceSorteado = random.nextInt(alvosDisponiveis.size());
+
+        return alvosDisponiveis.get(indiceSorteado);
+    }
 }

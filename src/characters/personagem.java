@@ -92,6 +92,10 @@ public abstract class Personagem {
         return List.of(vida, vidaMax, mana, manaMax, defesa, critico, dano, manaRegen);
     }
 
+    public String getNome() {
+        return nome;
+    }
+
     public boolean personagemVivo() {
         return vida > 0;
     }
