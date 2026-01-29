@@ -1,6 +1,8 @@
 # Compiled class file
 *.class
 out/
+.idea/
+War-of-Fates.iml
 
 # Log file
 *.log
