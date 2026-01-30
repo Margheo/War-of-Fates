@@ -34,6 +34,14 @@ Como jogar (UI)
 - `Start`: inicia a Arena; `Reset` reinicia.  
 - `Status`: abre `StatusDialog` com vida/mana atual/max e stats.  
 - Console lateral: mostra logs `[ARENA]` / `[ATAQUE]`.
+ 
+Apresentação (vídeo)
+
+- Link da apresentação no YouTube: 
+
+Prompts usados
+
+- Histórico de prompts estão em [PROMPTS_USADOS.md](PROMPTS_USADOS.md).
 
 Requisitos do trabalho (importante)  
 - Repositório público (ex.: GitHub).  

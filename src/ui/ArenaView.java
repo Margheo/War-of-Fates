@@ -161,9 +161,9 @@ public class ArenaView extends JPanel {
 
         // quantidade e grade (colunas x linhas) para posicionar personagens
         int quantidade = equipe.size();
-        int colunas = Math.max(1, (int) Math.sqrt(Math.max(1, quantidade)));
+        int colunas = Math.max(1, (int) Math.sqrt(quantidade));
         int linhas = (int) Math.ceil((double) quantidade / colunas);
-        int larguraCelula = width / Math.max(1, colunas);
+        int larguraCelula = width / colunas;
         int alturaCelula = height / Math.max(1, linhas);
 
         int idx = 0;
