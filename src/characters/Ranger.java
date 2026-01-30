@@ -9,7 +9,8 @@ public class Ranger extends Personagem {
                 15 + statusAleatorio(30),
                 0,
                 0,
-                0, 0, 0)
+                0,
+            );
             };
 }
 
